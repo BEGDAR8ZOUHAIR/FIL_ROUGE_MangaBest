@@ -1,0 +1,51 @@
+.categories ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+  @media only screen and (max-width: 768px) {
+    .categories ul{
+      display: block;
+    }
+    #rows {
+      flex-direction: column;
+    }
+  }
+  .categories ul li{
+    flex: 1 0 auto;
+      font-size: 13px;
+      vertical-align: middle;
+      text-align: center;
+      padding: 16px 0;
+      border-bottom: 1px solid #d3d3d3;
+      border-top: 1px solid #d3d3d3;
+  }
+  .categories ul li a{
+    text-decoration: none;
+    color: #000;
+    padding: 16px 0;
+  }
+  .categories ul li:hover{
+    background-color: #EEEEEE;
+  }
+  .categorie-Active {
+    background-color: #EE2D2F !important;
+    color: #fff !important;
+  }
+  
+  .ico-genres{
+    font-size: 30px;
+      font-weight: 500;
+      color: #2a2a2a;
+      /* padding-left: 43px; */
+
+  }
+
+  .icon-img{
+    /* background-repeat: no-repeat; */
+      /* display: inline-block; */
+      width: 40px;
+      height: 30px;
+
+      
+  }
