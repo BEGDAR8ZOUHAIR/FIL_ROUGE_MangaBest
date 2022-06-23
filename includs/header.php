@@ -1,12 +1,18 @@
+<style>
+  .navbar-toggler{
+    position: absolute;
+    right: 20;
+    top: 15;
+  }
+</style>
+
+
 <header>
 
   <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #0F1128;">
     <div class="container-lg">
       <a class="navbar-brand" href="http://localhost/fileRougeMangaBest/User/index"><img src="http://localhost/fileRougeMangaBest/Views/asset/image/tori  mangaa.png" alt="manga4all" height="40px"></a>
-      <button class="navbar-toggler" type="button" onclick="showMenu()">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="d-none d-lg-flex" id="showNav">
+      <div class="d-none d-lg-flex w-100" id="showNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
           <li class="nav-item mx-1">
             <a class="nav-link " href="http://localhost/fileRougeMangaBest/User/index">Home</a>
@@ -35,6 +41,9 @@
           <?php } ?>
         </div>
       </div>
+      <button class="navbar-toggler" type="button" onclick="showMenu()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
   </nav>
 </header>

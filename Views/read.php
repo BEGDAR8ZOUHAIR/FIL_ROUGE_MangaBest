@@ -18,9 +18,12 @@
     <title>New</title>
     <style>
       .img-fluid{
-        width: 100%;
+    
+     width:100%;
         height: auto;
+      
       }
+      
     </style>
 </head>
 <body>
