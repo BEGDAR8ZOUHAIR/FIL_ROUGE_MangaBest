@@ -23,15 +23,20 @@ class Manga extends db
             $date = $_POST['date'];
             $status = $_POST['status'];
             $sous = $_POST['sous-title'];
-            $fileName = basename($_FILES['images']['name']);
-            $targetFilePath = "C:/xampp/htdocs/fileRougeMangaBest/Views/asset/image/Chapter1/".$fileName;
+            $image_name = $_FILES['images']['name'];
+				$extension = pathinfo($image_name,PATHINFO_EXTENSION);
+				$randomno=rand(0,100000);
+				$rename='upload'.date('Ymd').$randomno;
+				$newname=$rename.'.'.$extension;
+
+            $targetFilePath = "C:/xampp/htdocs/fileRougeMangaBest/Views/asset/image/Chapter1/".$newname;
             $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
                 if(in_array($fileType, $allowTypes)){   
                     $count=0;
 
                     if(move_uploaded_file($_FILES['images']['tmp_name'],$targetFilePath)){
 
-                        $insert = "INSERT INTO `mangas`(`title`, `genre`, `date`, `sous-title`, `status`, `image`) VALUES ('$title','$genre', '$date', '$sous', '$status', '$fileName')";
+                        $insert = "INSERT INTO `mangas`(`title`, `genre`, `date`, `sous-title`, `status`, `image`) VALUES ('$title','$genre', '$date', '$sous', '$status', '$newname')";
                         $stm = $this->conn->query($insert);
                     }else{
                         $statusMsg = "Sorry, there was an error uploading your file.";

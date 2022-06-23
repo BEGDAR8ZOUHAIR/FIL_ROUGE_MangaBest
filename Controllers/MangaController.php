@@ -112,15 +112,15 @@ class MangaController
 				$sous = $_POST['sous-title'];
 				$image_name = $_FILES['images']['name'];
 				$extension = pathinfo($image_name,PATHINFO_EXTENSION);
-                $randomno=rand(0,100000);
-                $rename = $_POST['title'].date('Ymd').$randomno;
-				$rename = explode('', $rename);
-				$rename = implode($rename);
+				$randomno=rand(0,100000);
+				$rename='upload'.date('Ymd').$randomno;
+				$newname=$rename.'.'.$extension;
 
-                $fileName=$rename.'.'.$extension;
-				$targetFilePath = "C:/xampp/htdocs/fileRougeMangaBest/Views/asset/image/Chapter1/".$fileName;
+
+        
+				$targetFilePath = "C:/xampp/htdocs/fileRougeMangaBest/Views/asset/image/Chapter1/".$newname;
 				move_uploaded_file($_FILES['images']['tmp_name'],$targetFilePath);
-				array_push($vals,$title,$date,$genre,$status,$sous,$fileName);
+				array_push($vals,$title,$date,$genre,$status,$sous,$newname);
 				$manga->updateManga("mangas",$col,$vals,$_POST["id"]);
 				header("Location: http://localhost/fileRougeMangaBest/User/index");
 
