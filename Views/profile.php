@@ -43,46 +43,51 @@
             </div>
           </div>
 
-          <?php if(isset($_SESSION["admin"]) && $_SESSION["admin"]==1){ ?>
-          <div class="row">
-            <?php foreach($data as $row): ?>
-            <!-- Single Advisor-->
-            <div class="col-12 col-sm-6 col-lg-3">
-              <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                <!-- Team Thumb-->
-                <div class="advisor_thumb"><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
-                  <!-- Social Info-->
-                  <div class="social-info"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
-                </div>
-                <!-- Team Details-->
-                <div class="single_advisor_details_info">
-                  <h6><?php echo $row[2]; ?></h6>
-                  <p class="designation"><?php echo $data[0][4]; ?></p>
-                </div>
-              </div>
-            </div>
+          <?php if (isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) { ?>
+            <div class="row">
+              <?php foreach ($data as $row) : ?>
+                <!-- Single Advisor-->
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                    <!-- Team Thumb-->
+                    <div class="advisor_thumb"><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+                      <!-- Social Info-->
+                      <div class="social-info"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
 
-            <?php endforeach; ?>
-          </div>
-          <?php }else {?>
+
+                      <?= "<a href='http://localhost/fileRougeMangaBest/user/delete/" . $row[0]. "'>
+                        <button type='button' class='position-absolute top-0 end-0  rounded px-1 m-2 ico-pages bg-danger'>Delet</button>
+                      </a>";?>
+                    </div>
+                    <!-- Team Details-->
+                    <div class="single_advisor_details_info">
+                      <h6><?php echo $row[2]; ?></h6>
+                      <p class="designation"><?php echo $data[0][4]; ?></p>
+                    </div>
+                  </div>
+                </div>
+
+              <?php endforeach; ?>
+            </div>
+          <?php } else { ?>
             <div class="row" style="justify-content: center;">
-            <div class="col-12 col-sm-6 col-lg-3">
-              <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                <!-- Team Thumb-->
-                <div class="advisor_thumb"><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
-                  <!-- Social Info-->
-                  <div class="social-info"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
-                </div>
-                <!-- Team Details-->
-                <div class="single_advisor_details_info">
-                  <h6><?php echo $data[0][2]; ?></h6>
-                  <p class="designation"><?php echo $data[0][4]; ?></p>
+              <div class="col-12 col-sm-6 col-lg-3">
+                <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                  <!-- Team Thumb-->
+                  <div class="advisor_thumb"><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+                    <!-- Social Info-->
+                    <div class="social-info"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
+                  </div>
+                  <!-- Team Details-->
+                  <div class="single_advisor_details_info">
+                    <h6><?php echo $data[0][2]; ?></h6>
+                    <p class="designation"><?php echo $data[0][4]; ?></p>
+                  </div>
                 </div>
               </div>
             </div>
-            </div>
 
-          <?php }?>
+          <?php } ?>
         </div>
       </div>
       <?php include './includs/footer.php'; ?>

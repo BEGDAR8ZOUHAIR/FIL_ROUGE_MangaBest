@@ -128,5 +128,8 @@ class MangaController
 		require_once "./Views/updateManga.php";
 	}
 
+
+	
+
 	
 }

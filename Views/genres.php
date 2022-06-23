@@ -63,11 +63,11 @@
 
 
 
-  <div  class="row">
+  <div  class="row mx-auto">
      <?php foreach ($data as $manga) { 
       $image = "http://localhost/fileRougeMangaBest/Views/asset/image/Chapter1/".$manga['image'];
       ?>
-           <div class="col-3">
+           <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
              <div class="my-3">
                <div class="item">
              

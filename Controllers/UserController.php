@@ -99,10 +99,6 @@ class UserController
 	public function profile()
 	{
 		$db = new db();
-
-		// $email = $_SESSION["email"] ;
-
-		// require_once "./Views/profile.php";
 		$user = new User();
 		// $user = new Profile();
 		$data = [];
@@ -110,4 +106,14 @@ class UserController
 		
 		require_once "./Views/profile.php";
 	}
+     public function delete ($id){
+       
+		$db = new db();
+		$user = new User();
+		if($user->deleteUser($id)){
+			header("Location: http://localhost/fileRougeMangaBest/User/profile");
+		}
+	 }
+
+	
 }
